@@ -7,7 +7,7 @@
  *  An adaptation of 'Law - Contact Box' with a single stackable contact box and additional 'Phone 2' and 'Fax' fields.
  *  Document will write once when the page loads
  * 
- *  @version 210518.5
+ *  @version 210518.6
  * 
  */
 
@@ -274,7 +274,7 @@ try {
                             ? '<img src="' + contentDict.articleImage.content + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                             : '<img src="' + contentDict.articleImage.content + '" alt="' + defaultImageAlt + '" loading="auto" />';
 
-        contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">' + imageString + '</div>';
+        contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto">' + imageString + '</div>';
     }
                                     
 

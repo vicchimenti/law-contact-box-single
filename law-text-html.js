@@ -257,9 +257,26 @@ try {
 
 
 
-    if (office != "") {
-        htmlBox += '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + office + '</span></p>\n';
-    }
+
+    /***
+     *  Parse for Office
+     * 
+     * */
+
+
+    // if (office != "") {
+    //     htmlBox += '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + office + '</span></p>\n';
+    // }
+
+
+    var officeString =      (contentDict.office.content)
+                            ? '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + contentDict.office.content + '</span></p>'
+                            : '<p class="contactBoxSingleInfoOffice"></p>';
+
+
+
+
+
     if (email != "") {
         htmlBox += '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + email + '" aria-label="Send an email to ' + fullName + '">' + email + '</a></p>\n';
     }
@@ -293,6 +310,7 @@ try {
                 phone1String,
                 phone2String,
                 faxString,
+                officeString,
 
 
                 closeSingleInfo,

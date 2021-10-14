@@ -144,24 +144,20 @@ try {
      * */
     var htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
     var htmlClose = '</div>';
-    // var headingString = '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
-    // var anchorTag = '<t4 type="meta" meta="html_anchor" />';
     var openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';
     var closeContactBoxSingle = '</div>';
     var openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
     var closePhotoWrapper = '</div>';
     var contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
-    // var fullNameString = '<span class="displayNone visually-hidden">No heading provided</span>';
     var openSingleInfoWrapper = '<div class="contactBoxSingleInfoWrapper col-12 col-lg-8">';
     var closeSingleInfoWrapper = '</div>';
     var openSingleInfo = '<div class="contactBoxSingleInfo text-center text-lg-start">';
     var closeSingleInfo = '</div>';
-    // var htmlBox = ''; /* string used to store position and contact info */
     var clearFix = '<div class="clearfix"></div>';
 
 
 
-    
+
     /***
      *  Parse for optional heading
      * 

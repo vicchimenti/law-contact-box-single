@@ -42,7 +42,7 @@ try {
     // Open the wrapper for this content item. If the user added a heading, place it in an H2. Add background color and ID.
     if (heading != "") {
       headingString = '<h2 class="contactBoxSingleTitle">' + heading + '</h2>';
-      htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + color + '" id="id' + content.getID() + '" data-position-default="Main">' + headingString + '';
+      htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + color + '" id="id' + content.getID() + '" data-position-default="Main" data-position-selected="Main">' + headingString + '';
     }
     
     // Assign position (title) and contact info to one variable. Just keep adding to the HTML.

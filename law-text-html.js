@@ -148,7 +148,7 @@ try {
     var openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
     var closePhotoWrapper = '</div>';
     var contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
-    var fullNameString = '<span class="displayNone">No heading provided</span>';
+    var fullNameString = '<span class="displayNone visually-hidden">No heading provided</span>';
     var openSingleInfoWrapper = '<div class="contactBoxSingleInfoWrapper col-12 col-lg-8">';
     var closeSingleInfoWrapper = '</div>';
     var openSingleInfo = '<div class="contactBoxSingleInfo text-center text-lg-start">';

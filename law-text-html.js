@@ -231,9 +231,9 @@ try {
      * */
 
 
-    if (phone2 != "") {
-        htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone2 + '</span></p>\n';
-    }
+    // if (phone2 != "") {
+    //     htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone2 + '</span></p>\n';
+    // }
 
     var phone2String =      (contentDict.phone2.content)
                             ? '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + phone2 + '</span></p>'
@@ -280,6 +280,7 @@ try {
                 fullNameString,
                 titleString,
                 phone1String,
+                phone2String,
 
 
                 closeSingleInfo,

@@ -108,20 +108,20 @@ try {
      * */
     var contentDict = {
 
-        itemName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
-        heading: getContentValues('<t4 type="content" name="Optional Heading" output="normal" modifiers="striptags,htmlentities" />'),
-        fullName: getContentValues('<t4 type="content" name="Full Name" output="normal" modifiers="striptags,htmlentities" />'),
-        title: getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
-        phone1: getContentValues('<t4 type="content" name="Phone 1" output="normal" modifiers="striptags,htmlentities" />'),
-        phone2: getContentValues('<t4 type="content" name="Phone 2" output="normal" modifiers="striptags,htmlentities" />'),
-        fax: getContentValues('<t4 type="content" name="Fax" output="normal" modifiers="striptags,htmlentities" />'),
-        email: getContentValues('<t4 type="content" name="Email" output="normal" modifiers="striptags,htmlentities,encode_emails" />'),
-        office: getContentValues('<t4 type="content" name="Office" output="normal" modifiers="striptags,htmlentities" />'),
-        additionalContent: getContentValues('<t4 type="content" name="Additional Text" output="normal" modifiers="medialibrary,nav_sections" />'),
-        color: getContentValues('<t4 type="content" name="Background Color" output="normal" display_field="value" />'),
-        articleImage: getContentValues('<t4 type="content" name="Photo" output="normal" formatter="path/*" />'),
-        anchorTag: getContentValues('<t4 type="meta" meta="html_anchor" />'),
-        contentID: getContentValues('<t4 type="meta" meta="content_id" />')
+        itemName:           getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
+        heading:            getContentValues('<t4 type="content" name="Optional Heading" output="normal" modifiers="striptags,htmlentities" />'),
+        fullName:           getContentValues('<t4 type="content" name="Full Name" output="normal" modifiers="striptags,htmlentities" />'),
+        title:              getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
+        phone1:             getContentValues('<t4 type="content" name="Phone 1" output="normal" modifiers="striptags,htmlentities" />'),
+        phone2:             getContentValues('<t4 type="content" name="Phone 2" output="normal" modifiers="striptags,htmlentities" />'),
+        fax:                getContentValues('<t4 type="content" name="Fax" output="normal" modifiers="striptags,htmlentities" />'),
+        email:              getContentValues('<t4 type="content" name="Email" output="normal" modifiers="striptags,htmlentities,encode_emails" />'),
+        office:             getContentValues('<t4 type="content" name="Office" output="normal" modifiers="striptags,htmlentities" />'),
+        additionalContent:  getContentValues('<t4 type="content" name="Additional Text" output="normal" modifiers="medialibrary,nav_sections" />'),
+        color:              getContentValues('<t4 type="content" name="Background Color" output="normal" display_field="value" />'),
+        articleImage:       getContentValues('<t4 type="content" name="Photo" output="normal" formatter="path/*" />'),
+        anchorTag:          getContentValues('<t4 type="meta" meta="html_anchor" />'),
+        contentID:          getContentValues('<t4 type="meta" meta="content_id" />')
     };
 
 

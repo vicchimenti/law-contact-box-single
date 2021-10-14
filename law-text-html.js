@@ -139,10 +139,10 @@ try {
 
     
     // Assign HTML with embedded element values to new variables
-    var htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + color + '" id="id' + content.getID() + '" data-position-default="Main" data-position-selected="Main">';
+    var htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
     var htmlClose = '</div>';
-    var headingString = '<span class="contactBoxSingleTitle displayNone">No heading provided</span>';
-    var anchorTag = '<t4 type="meta" meta="html_anchor" />';
+    var headingString = '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
+    // var anchorTag = '<t4 type="meta" meta="html_anchor" />';
     var openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';
     var closeContactBoxSingle = '</div>';
     var openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
@@ -157,7 +157,7 @@ try {
     var clearFix = '<div class="clearfix"></div>';
 
 
-    
+
     
     // Open the wrapper for this content item. If the user added a heading, place it in an H2. Add background color and ID.
     if (heading != "") {

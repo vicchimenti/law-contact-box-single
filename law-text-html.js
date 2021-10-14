@@ -152,7 +152,7 @@ try {
      * */
     var htmlOpen =                  (contentDict.color.content)
                                     ? '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + contentDict.color.content + '" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">'
-                                    : '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
+                                    : '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColorwhite" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
 
 
 

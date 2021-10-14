@@ -145,9 +145,9 @@ try {
     // var anchorTag = '<t4 type="meta" meta="html_anchor" />';
     var openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';
     var closeContactBoxSingle = '</div>';
-    var openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4">';
+    var openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
     var closePhotoWrapper = '</div>';
-    var contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto">' + photo + '</div>';
+    var contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
     var fullNameString = '<span class="displayNone">No heading provided</span>';
     var openSingleInfoWrapper = '<div class="contactBoxSingleInfoWrapper col-12 col-lg-8">';
     var closeSingleInfoWrapper = '</div>';

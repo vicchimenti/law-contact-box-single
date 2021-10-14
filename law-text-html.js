@@ -276,10 +276,19 @@ try {
 
 
 
+    /***
+     *  Parse for Office
+     * 
+     * */
 
     if (email != "") {
         htmlBox += '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + email + '" aria-label="Send an email to ' + fullName + '">' + email + '</a></p>\n';
     }
+
+    var emailTitle =        (contentDict.fullName.content ?? "Contact Us")
+    var emailString =       (contentDict.email.content)
+
+
     
     if (additionalText != "") {
         htmlBox += '<div class="contactBoxSingleInfoAdditional text-sm-start">\n';

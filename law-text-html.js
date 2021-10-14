@@ -138,22 +138,25 @@ try {
 
 
     
-    // Assign HTML with embedded element values to new variables
+    /***
+     *  default html initializations
+     * 
+     * */
     var htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
     var htmlClose = '</div>';
-    var headingString = '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
+    // var headingString = '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
     // var anchorTag = '<t4 type="meta" meta="html_anchor" />';
     var openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';
     var closeContactBoxSingle = '</div>';
     var openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
     var closePhotoWrapper = '</div>';
     var contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
-    var fullNameString = '<span class="displayNone visually-hidden">No heading provided</span>';
+    // var fullNameString = '<span class="displayNone visually-hidden">No heading provided</span>';
     var openSingleInfoWrapper = '<div class="contactBoxSingleInfoWrapper col-12 col-lg-8">';
     var closeSingleInfoWrapper = '</div>';
     var openSingleInfo = '<div class="contactBoxSingleInfo text-center text-lg-start">';
     var closeSingleInfo = '</div>';
-    var htmlBox = ''; /* string used to store position and contact info */
+    // var htmlBox = ''; /* string used to store position and contact info */
     var clearFix = '<div class="clearfix"></div>';
 
 
@@ -164,20 +167,46 @@ try {
     //   headingString = '<h2 class="contactBoxSingleTitle">' + heading + '</h2>';
     // }
 
-    var headingString = (heading)
-                        ? '<h2 class="contactBoxSingleTitle">' + heading + '</h2>'
-                        : '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
+
+    /***
+     *  Parse for optional heading
+     * 
+     * */
+    var headingString =     (contentDict.heading.content)
+                            ? '<h2 class="contactBoxSingleTitle">' + '</h2>'
+                            : '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
 
 
 
     
-    // Assign position (title) and contact info to one variable. Just keep adding to the HTML.
-    if (fullName !="") {
-      fullNameString = '<h3>' + fullName + '</h3>';
-    }
-    if (title != "") {
-        htmlBox += '<p class="contactBoxSingleInfoPosition">' + title + '</p>\n';
-    }
+    /***
+     *  Parse for Full Name
+     * 
+     * */
+    // if (fullName !="") {
+    //   fullNameString = '<h3>' + fullName + '</h3>';
+    // }
+
+
+    var fullNameString =    (contentDict.fullName.content)
+                            ? '<h3 class="fullName">' + contentDict.fullName.content + '</h3>'
+                            : '<span class="displayNone visually-hidden">No heading provided</span>';
+
+
+    /***
+     *  Parse for Title
+     * 
+     * */
+    // if (title != "") {
+    //     htmlBox += '<p class="contactBoxSingleInfoPosition">' + title + '</p>\n';
+    // }
+
+    var titleString =       (contentDict.title.content)
+                            ? '<p class="contactBoxSingleInfoPosition">' + contentDict.title.content + '</p>'
+                            : '<p class="contactBoxSingleInfoPosition visually-hidden">No Title Provided</span>';
+
+
+
     if (phone1 != "") {
         htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone1 + '</span></p>\n';
     }
@@ -199,6 +228,62 @@ try {
         htmlBox += '' + additionalText + '\n';
         htmlBox += '</div> <!-- close .contactBoxSingleInfoAdditional -->\n';
     }
+
+
+
+
+    /***
+     *  write document once
+     * 
+     * */
+         writeDocument(
+            [
+                htmlOpen,
+                contentDict.anchorTag.content,
+                headingString,
+                openContactBoxSingle,
+                openPhotoWrapper,
+                contactBoxSinglePhoto,
+                closePhotoWrapper,
+                openSingleInfoWrapper,
+                openSingleInfo,
+                fullNameString,
+                titleString,
+
+
+                closeSingleInfo,
+                titleHeader,
+                openImageWrapper,
+                imageString,
+                captionString,
+                photoCreditWrapper,
+                closeImageWrapper,
+                openRow,
+                openBodyWrapper,
+                openPublishDetails,
+                linkString,
+                dateString,
+                byLine,
+                closePublishDetails,
+                topicList,
+                audienceList,
+                bodyBorder,
+                bodyString,
+                bodyBorder,
+                openSortFields,
+                prioityString,
+                closeSortFields,
+                closeBodyWrapper,
+                closeRow,
+                endingHTML
+            ]
+        );
+
+
+
+
+
+
     
     // Write the HTML with embedded user values into the page
     document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, htmlOpen));

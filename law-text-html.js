@@ -114,7 +114,6 @@
 try {
 
 
-
     /***
      *      Dictionary of content
      * */
@@ -142,7 +141,6 @@ try {
      *  default html initializations
      * 
      * */
-    var htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
     var htmlClose = '</div>';
     var openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';
     var closeContactBoxSingle = '</div>';
@@ -169,7 +167,6 @@ try {
 
 
 
-
     /***
      *  Parse for optional heading
      * 
@@ -188,6 +185,8 @@ try {
     var fullNameString =            (contentDict.fullName.content)
                                     ? '<h3 class="fullName">' + contentDict.fullName.content + '</h3>'
                                     : '<span class="displayNone visually-hidden">No heading provided</span>';
+
+
 
 
     /***

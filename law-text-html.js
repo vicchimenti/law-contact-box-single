@@ -7,7 +7,7 @@
  *  An adaptation of 'Law - Contact Box' with a single stackable contact box and additional 'Phone 2' and 'Fax' fields.
  *  Document will write once when the page loads
  * 
- *  @version 210518.1
+ *  @version 210518.2
  * 
  */
 
@@ -138,18 +138,18 @@ try {
 
 
     // Get user entered element values and assign element values to variables
-    var heading = content.get('Optional Heading');
-    var fullName = content.get('Full Name');
-    var title = content.get('Title');
-    var phone1 = content.get('Phone 1');
-    var phone2 = content.get('Phone 2');
-    var fax = content.get('Fax');
-    var office = content.get('Office');
-    var email = content.get('Email');
-    var color = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Background Color' output='normal' display_field='value' />");
-    var photo = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, '<t4 type="content" name="Photo" output="normal" formatter="image/*" />');
-    var facultyProfile = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Faculty profile' output='normal' display_field='value' />");
-    var additionalText = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Additional Text' output='normal' modifiers='medialibrary,nav_sections' />");
+    // var heading = content.get('Optional Heading');
+    // var fullName = content.get('Full Name');
+    // var title = content.get('Title');
+    // var phone1 = content.get('Phone 1');
+    // var phone2 = content.get('Phone 2');
+    // var fax = content.get('Fax');
+    // var office = content.get('Office');
+    // var email = content.get('Email');
+    // var color = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Background Color' output='normal' display_field='value' />");
+    // var photo = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, '<t4 type="content" name="Photo" output="normal" formatter="image/*" />');
+    // var facultyProfile = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Faculty profile' output='normal' display_field='value' />");
+    // var additionalText = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Additional Text' output='normal' modifiers='medialibrary,nav_sections' />");
     
     // Assign HTML with embedded element values to new variables
     var htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + color + '" id="id' + content.getID() + '" data-position-default="Main" data-position-selected="Main">';

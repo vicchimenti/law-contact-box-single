@@ -159,6 +159,18 @@ try {
 
 
     /***
+     *  Parse for Background Color
+     * 
+     * */
+    var htmlOpen =                  (contentDict.color.content)
+                                    ? '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor ' + contentDict.color.content + '" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">'
+                                    : '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
+
+
+
+
+
+    /***
      *  Parse for optional heading
      * 
      * */
@@ -237,7 +249,7 @@ try {
      *  Parse for Email
      * 
      * */
-    var emailTitle =                (contentDict.fullName.content ?? "SU Law")
+    var emailTitle =                (contentDict.fullName.content ?? "SU Law");
     var emailString =               (contentDict.email.content)
                                     ? '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + emailTitle + '">Contact ' + emailTitle + '</a></p>'
                                     : '<p class="contactBoxSingleInfoEmail visually-hidden">No Email Provided</p>';

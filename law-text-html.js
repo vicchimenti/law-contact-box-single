@@ -277,57 +277,37 @@ try {
      *  write document once
      * 
      * */
-         writeDocument(
-            [
-                htmlOpen,
-                contentDict.anchorTag.content,
-                headingString,
-                openContactBoxSingle,
-                openPhotoWrapper,
-                contactBoxSinglePhoto,
-                closePhotoWrapper,
-                openSingleInfoWrapper,
-                openSingleInfo,
-                fullNameString,
-                titleString,
-                phone1String,
-                phone2String,
-                faxString,
-                officeString,
-                emailString,
-                additionalContentString,
-                closeSingleInfo,
-                closeSingleInfoWrapper,
-                clearFix,
-                closeContactBoxSingle,
-                htmlClose
-            ]
-        );
+    writeDocument(
+        [
+            htmlOpen,
+            contentDict.anchorTag.content,
+            headingString,
+            openContactBoxSingle,
+            openPhotoWrapper,
+            contactBoxSinglePhoto,
+            closePhotoWrapper,
+            openSingleInfoWrapper,
+            openSingleInfo,
+            fullNameString,
+            titleString,
+            phone1String,
+            phone2String,
+            faxString,
+            officeString,
+            emailString,
+            additionalContentString,
+            closeSingleInfo,
+            closeSingleInfoWrapper,
+            clearFix,
+            closeContactBoxSingle,
+            htmlClose
+        ]
+    );
 
 
+        
 
-
-
-
-    
-    // Write the HTML with embedded user values into the page
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, htmlOpen));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, anchorTag));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, openContactBoxSingle));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, openPhotoWrapper));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, contactBoxSinglePhoto));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, closePhotoWrapper));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, openSingleInfoWrapper));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, openSingleInfo));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, fullNameString));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, htmlBox));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, closeSingleInfo));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, closeSingleInfoWrapper));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, clearFix));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, closeContactBoxSingle));
-    // document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, htmlClose));
-    
     }
-    catch (exception) {
-        document.write (exception); // Catch any errors that the above code may throw 
+    catch (err) {
+        document.write (err.message);
     }

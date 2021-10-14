@@ -160,10 +160,16 @@ try {
 
     
     // Open the wrapper for this content item. If the user added a heading, place it in an H2. Add background color and ID.
-    if (heading != "") {
-      headingString = '<h2 class="contactBoxSingleTitle">' + heading + '</h2>';
-      htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + color + '" id="id' + content.getID() + '" data-position-default="Main" data-position-selected="Main">' + headingString + '';
-    }
+    // if (heading != "") {
+    //   headingString = '<h2 class="contactBoxSingleTitle">' + heading + '</h2>';
+    // }
+
+    var headingString = (heading)
+                        ? '<h2 class="contactBoxSingleTitle">' + heading + '</h2>'
+                        : '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
+
+
+
     
     // Assign position (title) and contact info to one variable. Just keep adding to the HTML.
     if (fullName !="") {

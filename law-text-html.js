@@ -101,6 +101,7 @@ try {
      * */
     var contentDict = {
 
+        itemName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         heading: getContentValues('<t4 type="content" name="Optional Heading" output="normal" modifiers="striptags,htmlentities" />'),
         fullName: getContentValues('<t4 type="content" name="Full Name" output="normal" modifiers="striptags,htmlentities" />'),
         title: getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
@@ -246,6 +247,29 @@ try {
                                     ? '<div class="contactBoxSingleInfoAdditional text-sm-start">' + contentDict.additionalContent.content + '</div>'
                                     : '<div class="contactBoxSingleInfoAdditional text-sm-start visually-hidden"><span class="visually-hidden">No Additional Content Provided</span></div>';
 
+
+
+
+    /***
+     *  Parse for Image Info
+     * 
+     * */
+     if (contentDict.articleImage.content) {
+
+        var imageID = content.get('Photo').getID();
+        var mediaInfo = getMediaInfo(imageID);
+        var media = readMedia(imageID);
+        var info = new ImageInfo;
+        info.setInput(media);
+
+        var defaultImageAlt =      (contentDict.fullName.content ?? contentDict.itemName.content);
+        var imageString =   (info.check())
+                            ? '<img src="' + contentDict.articleImage.content + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
+                            : '<img src="' + contentDict.articleImage.content + '" alt="' + defaultImageAlt + '" loading="auto" />';
+
+        contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">' + imageString + '</div>';
+    }
+                                    
 
 
 

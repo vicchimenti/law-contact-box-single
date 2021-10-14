@@ -207,12 +207,42 @@ try {
 
 
 
-    if (phone1 != "") {
-        htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone1 + '</span></p>\n';
-    }
+
+    /***
+     *  Parse for Phone 1
+     * 
+     * */
+
+
+    // if (phone1 != "") {
+    //     htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone1 + '</span></p>\n';
+    // }
+
+    var phone1String =      (contentDict.phone1.content)
+                            ? '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + phone1 + '</span></p>'
+                            : '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 1 Provided</p>';
+
+
+
+
+    /***
+     *  Parse for Phone 1
+     * 
+     * */
+
+
     if (phone2 != "") {
         htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone2 + '</span></p>\n';
     }
+
+    var phone2String =      (contentDict.phone2.content)
+                            ? '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + phone2 + '</span></p>'
+                            : '<p class="contactBoxSingleInfoPhone"></p>';
+
+
+
+
+
     if (fax != "") {
         htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-fax"></span><span>&nbsp;' + fax + '</span></p>\n';
     }
@@ -249,6 +279,7 @@ try {
                 openSingleInfo,
                 fullNameString,
                 titleString,
+                phone1String,
 
 
                 closeSingleInfo,

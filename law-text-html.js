@@ -23,7 +23,7 @@ try {
     
     // Assign HTML with embedded element values to new variables
     var htmlOpen = '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + color + '" id="id' + content.getID() + '" data-position-default="Main">';
-    var htmlClose = '</div> <!-- close .contactBoxSingleWrapper -->';
+    var htmlClose = '</div>';
     var headingString = '<span class="contactBoxSingleTitle displayNone">No heading provided</span>';
     var anchorTag = '<t4 type="meta" meta="html_anchor" />';
     var openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';

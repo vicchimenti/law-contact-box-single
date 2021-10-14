@@ -158,19 +158,10 @@ try {
     var closeSingleInfo = '</div>';
     // var htmlBox = ''; /* string used to store position and contact info */
     var clearFix = '<div class="clearfix"></div>';
-    // var openAdditionalInfo = '<div class="contactBoxSingleInfoAdditional text-sm-start">';
-    // var closeAdditionalInfo = '</div>';
-
 
 
 
     
-    // Open the wrapper for this content item. If the user added a heading, place it in an H2. Add background color and ID.
-    // if (heading != "") {
-    //   headingString = '<h2 class="contactBoxSingleTitle">' + heading + '</h2>';
-    // }
-
-
     /***
      *  Parse for optional heading
      * 
@@ -186,11 +177,6 @@ try {
      *  Parse for Full Name
      * 
      * */
-    // if (fullName !="") {
-    //   fullNameString = '<h3>' + fullName + '</h3>';
-    // }
-
-
     var fullNameString =            (contentDict.fullName.content)
                                     ? '<h3 class="fullName">' + contentDict.fullName.content + '</h3>'
                                     : '<span class="displayNone visually-hidden">No heading provided</span>';
@@ -200,10 +186,6 @@ try {
      *  Parse for Title
      * 
      * */
-    // if (title != "") {
-    //     htmlBox += '<p class="contactBoxSingleInfoPosition">' + title + '</p>\n';
-    // }
-
     var titleString =               (contentDict.title.content)
                                     ? '<p class="contactBoxSingleInfoPosition">' + contentDict.title.content + '</p>'
                                     : '<p class="contactBoxSingleInfoPosition visually-hidden">No Title Provided</span>';
@@ -215,12 +197,6 @@ try {
      *  Parse for Phone 1
      * 
      * */
-
-
-    // if (phone1 != "") {
-    //     htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone1 + '</span></p>\n';
-    // }
-
     var phone1String =              (contentDict.phone1.content)
                                     ? '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone1.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 1 Provided</p>';
@@ -232,12 +208,6 @@ try {
      *  Parse for Phone 2
      * 
      * */
-
-
-    // if (phone2 != "") {
-    //     htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-phone"></span><span>&nbsp;' + phone2 + '</span></p>\n';
-    // }
-
     var phone2String =              (contentDict.phone2.content)
                                     ? '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone2.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 2 Provided</p>';
@@ -249,11 +219,6 @@ try {
      *  Parse for Fax
      * 
      * */
-
-    // if (fax != "") {
-    //     htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-fax"></span><span>&nbsp;' + fax + '</span></p>\n';
-    // }
-
     var faxString =                 (contentDict.fax.content)
                                     ? '<p class="contactBoxSingleInfoPhone" id="fax' + contentDict.contentID.content + '"><span class="fas fa-fax"></span><span>&nbsp;' + contentDict.fax.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoPhone visually-hidden">No Fax Provided</p>';
@@ -265,13 +230,6 @@ try {
      *  Parse for Office
      * 
      * */
-
-
-    // if (office != "") {
-    //     htmlBox += '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + office + '</span></p>\n';
-    // }
-
-
     var officeString =              (contentDict.office.content)
                                     ? '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + contentDict.office.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoOffice visually-hidden">No Office Provided</p>';
@@ -283,11 +241,6 @@ try {
      *  Parse for Email
      * 
      * */
-
-    // if (email != "") {
-    //     htmlBox += '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + email + '" aria-label="Send an email to ' + fullName + '">' + email + '</a></p>\n';
-    // }
-
     var emailTitle =                (contentDict.fullName.content ?? "SU Law")
     var emailString =               (contentDict.email.content)
                                     ? '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + emailTitle + '">Contact ' + emailTitle + '</a></p>'
@@ -300,15 +253,6 @@ try {
      *  Parse for Additional Content
      * 
      * */
-
-    
-    // if (additionalText != "") {
-    //     htmlBox += '<div class="contactBoxSingleInfoAdditional text-sm-start">\n';
-    //     htmlBox += '' + additionalText + '\n';
-    //     htmlBox += '</div> <!-- close .contactBoxSingleInfoAdditional -->\n';
-    // }
-
-
     var additionalContentString =   (contentDict.additionalContent.content)
                                     ? '<div class="contactBoxSingleInfoAdditional text-sm-start">' + contentDict.additionalContent.content + '</div>'
                                     : '<div class="contactBoxSingleInfoAdditional text-sm-start visually-hidden"><span class="visually-hidden">No Additional Content Provided</span></div>';

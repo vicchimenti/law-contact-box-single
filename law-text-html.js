@@ -238,7 +238,7 @@ try {
      *  Parse for Email
      * 
      * */
-    var emailTitle =                (contentDict.fullName.content ?? "SU Law");
+    var emailTitle = contentDict.fullName.content ? contentDict.fullName.content : "SU Law";
     var emailString =               (contentDict.email.content)
                                     ? '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + emailTitle + '">Contact ' + emailTitle + '</a></p>'
                                     : '<p class="contactBoxSingleInfoEmail visually-hidden">No Email Provided</p>';
@@ -269,7 +269,7 @@ try {
         var info = new ImageInfo;
         info.setInput(media);
 
-        var defaultImageAlt =      (contentDict.fullName.content ?? contentDict.itemName.content);
+        var defaultImageAlt = contentDict.fullName.content ? contentDict.fullName.content : contentDict.itemName.content;
         var imageString =   (info.check())
                             ? '<img src="' + contentDict.articleImage.content + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                             : '<img src="' + contentDict.articleImage.content + '" alt="' + defaultImageAlt + '" loading="auto" />';

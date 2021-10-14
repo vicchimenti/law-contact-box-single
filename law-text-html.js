@@ -173,7 +173,7 @@ try {
      * 
      * */
     var headingString =     (contentDict.heading.content)
-                            ? '<h2 class="contactBoxSingleTitle">' + '</h2>'
+                            ? '<h2 class="contactBoxSingleTitle">' + contentDict.heading.content + '</h2>'
                             : '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
 
 
@@ -219,14 +219,14 @@ try {
     // }
 
     var phone1String =      (contentDict.phone1.content)
-                            ? '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + phone1 + '</span></p>'
+                            ? '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone1.content + '</span></p>'
                             : '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 1 Provided</p>';
 
 
 
 
     /***
-     *  Parse for Phone 1
+     *  Parse for Phone 2
      * 
      * */
 
@@ -236,16 +236,27 @@ try {
     // }
 
     var phone2String =      (contentDict.phone2.content)
-                            ? '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + phone2 + '</span></p>'
+                            ? '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone2.content + '</span></p>'
+                            : '<p class="contactBoxSingleInfoPhone visually-hidden"></p>';
+
+
+
+
+    /***
+     *  Parse for Fax
+     * 
+     * */
+
+    // if (fax != "") {
+    //     htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-fax"></span><span>&nbsp;' + fax + '</span></p>\n';
+    // }
+
+    var faxString =         (contentDict.fax.content)
+                            ? '<p class="contactBoxSingleInfoPhone" id="fax' + contentDict.contentID.content + '"><span class="fas fa-fax"></span><span>&nbsp;' + contentDict.fax.content + '</span></p>'
                             : '<p class="contactBoxSingleInfoPhone"></p>';
 
 
 
-
-
-    if (fax != "") {
-        htmlBox += '<p class="contactBoxSingleInfoPhone"><span class="fas fa-fax"></span><span>&nbsp;' + fax + '</span></p>\n';
-    }
     if (office != "") {
         htmlBox += '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + office + '</span></p>\n';
     }
@@ -281,6 +292,7 @@ try {
                 titleString,
                 phone1String,
                 phone2String,
+                faxString,
 
 
                 closeSingleInfo,

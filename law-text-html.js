@@ -1,10 +1,19 @@
 /***
-*  Decription: An adaptation of 'Law - Contact Box' with a single stackable contact box and additional 'Phone 2' and 'Fax' fields.
-*  See Seattle University School of Law 'Law - Contact Box (Single)' Content Type 5529 law/text/html
-*  Document will write once when the page loads
-*
-*  @version 210518 Updated by Troy Fleischauer, BS Informatics, HCI '12
-*/
+ *  @author Troy Fleischauer, BS Informatics, HCI '12
+ *  @file   law/text/html
+ *  @see    Content Type: Law - Contact Box (Single)
+ *              ID: 5529
+ * 
+ *  An adaptation of 'Law - Contact Box' with a single stackable contact box and additional 'Phone 2' and 'Fax' fields.
+ *  Document will write once when the page loads
+ * 
+ *  @version 210518.1
+ * 
+ */
+
+
+
+
 
 try {
     // Get user entered element values and assign element values to variables

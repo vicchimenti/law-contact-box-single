@@ -7,7 +7,7 @@
  *  An adaptation of 'Law - Contact Box' with a single stackable contact box and additional 'Phone 2' and 'Fax' fields.
  *  Document will write once when the page loads
  * 
- *  @version 210518.12
+ *  @version 210518.13
  * 
  */
 
@@ -194,8 +194,8 @@ try {
      * 
      * */
     let titleString =               (contentDict.title.content)
-                                    ? '<p class="contactBoxSingleInfoPosition">' + contentDict.title.content + '</p>'
-                                    : '<p class="contactBoxSingleInfoPosition visually-hidden">No Title Provided</span>';
+                                    ? '<p class="contactBoxSingleInfoTitle">' + contentDict.title.content + '</p>'
+                                    : '<p class="contactBoxSingleInfoTitle visually-hidden">No Title Provided</span>';
 
 
 

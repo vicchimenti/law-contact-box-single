@@ -122,6 +122,7 @@ try {
         additionalContent:  getContentValues('<t4 type="content" name="Additional Text" output="normal" modifiers="medialibrary,nav_sections" />'),
         color:              getContentValues('<t4 type="content" name="Background Color" output="normal" display_field="value" />'),
         articleImage:       getContentValues('<t4 type="content" name="Photo" output="normal" formatter="path/*" />'),
+        profileLinkUrl:     getContentValues('<t4 type="content" name="Profile Link" output="linkurl" modifiers="nav_sections" />'),
         anchorTag:          getContentValues('<t4 type="meta" meta="html_anchor" />'),
         contentID:          getContentValues('<t4 type="meta" meta="content_id" />')
     };

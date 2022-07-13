@@ -7,7 +7,7 @@
  *  An adaptation of 'Law - Contact Box' with a single stackable contact box and additional 'Phone 2' and 'Fax' fields.
  *  Document will write once when the page loads
  * 
- *  @version 210518.8
+ *  @version 210518.9
  * 
  */
 
@@ -326,4 +326,4 @@ try {
     }
     catch (err) {
         document.write (err.message);
-    }
+}

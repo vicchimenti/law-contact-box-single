@@ -111,6 +111,7 @@ try {
         itemName:           getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         heading:            getContentValues('<t4 type="content" name="Optional Heading" output="normal" modifiers="striptags,htmlentities" />'),
         fullName:           getContentValues('<t4 type="content" name="Full Name" output="normal" modifiers="striptags,htmlentities" />'),
+        firstName:          getContentValues('<t4 type="content" name="First Name" output="normal" modifiers="striptags,htmlentities" />'),
         title:              getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
         phone1:             getContentValues('<t4 type="content" name="Phone 1" output="normal" modifiers="striptags,htmlentities" />'),
         phone2:             getContentValues('<t4 type="content" name="Phone 2" output="normal" modifiers="striptags,htmlentities" />'),

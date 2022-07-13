@@ -119,6 +119,7 @@ try {
         firstName:          getContentValues('<t4 type="content" name="First Name" output="normal" modifiers="striptags,htmlentities" />'),
         lastName:           getContentValues('<t4 type="content" name="Last Name" output="normal" modifiers="striptags,htmlentities" />'),
         title:              getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
+        subtitle:           getContentValues('<t4 type="content" name="Subtitle" output="normal" modifiers="striptags,htmlentities" />'),
         phone1:             getContentValues('<t4 type="content" name="Phone 1" output="normal" modifiers="striptags,htmlentities" />'),
         phone2:             getContentValues('<t4 type="content" name="Phone 2" output="normal" modifiers="striptags,htmlentities" />'),
         fax:                getContentValues('<t4 type="content" name="Fax" output="normal" modifiers="striptags,htmlentities" />'),
@@ -195,6 +196,17 @@ try {
     let titleString =               (contentDict.title.content)
                                     ? '<p class="contactBoxSingleInfoPosition">' + contentDict.title.content + '</p>'
                                     : '<p class="contactBoxSingleInfoPosition visually-hidden">No Title Provided</span>';
+
+
+
+
+    /***
+     *  Parse for Subtitle
+     * 
+     * */
+    let subtitleString = (contentDict.subtitle.content) ?
+        '<p class="contactBoxSingleInfoPosition">' + contentDict.subtitle.content + '</p>' :
+        '<p class="contactBoxSingleInfoPosition visually-hidden">No Title Provided</span>';
 
 
 

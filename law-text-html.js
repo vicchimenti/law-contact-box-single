@@ -204,9 +204,9 @@ try {
      * 
      * */
     let phone1String = (contentDict.phone1.content && contentDict.firstName.content) ?
-        '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><a class="contactPhone" href="tel:' + contentDict.phone1.content + '" aria-label="Call ' + contentDict.firstName.content + '">' + contentDict.phone1.content + '</a></p>' :
+        '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span> <a class="contactPhone" href="tel:' + contentDict.phone1.content + '" aria-label="Call ' + contentDict.firstName.content + '">' + contentDict.phone1.content + '</a></p>' :
         (contentDict.phone1.content && contentDict.fullName.content) ?
-        '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><a class="contactPhone" href="tel:' + contentDict.phone1.content + '" aria-label="Call ' + contentDict.fullName.content + '">' + contentDict.phone1.content + '</a></p>' :
+        '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span> <a class="contactPhone" href="tel:' + contentDict.phone1.content + '" aria-label="Call ' + contentDict.fullName.content + '">' + contentDict.phone1.content + '</a></p>' :
         '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 1 Provided</p>';
 
 

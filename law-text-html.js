@@ -193,9 +193,9 @@ try {
      *  Parse for Title
      * 
      * */
-    let titleString =               (contentDict.title.content)
-                                    ? '<p class="contactBoxSingleInfoTitle">' + contentDict.title.content + '</p>'
-                                    : '<p class="contactBoxSingleInfoTitle visually-hidden">No Title Provided</span>';
+    let titleString = (contentDict.title.content) ?
+        '<p class="contactBoxSingleInfoTitle">' + contentDict.title.content + '</p>' :
+        '<p class="contactBoxSingleInfoTitle visually-hidden">No Title Provided</span>';
 
 
 

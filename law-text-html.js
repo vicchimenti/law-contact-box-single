@@ -34,17 +34,22 @@
   *      and confirm valid existing content item field
   */
   function getContentValues(tag) {
+
      try {
-         var _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
+
+         let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
+
          return {
              isError: false,
              content: _tag == '' ? null : _tag
-         }
+         };
+
      } catch (error) {
+
          return {
              isError: true,
              message: error.message
-         }
+         };
      }
  }
  
@@ -56,8 +61,8 @@
   */
  function getMediaInfo(mediaID) {
  
-     var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-     var media = mediaManager.get(mediaID, language);
+     let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+     let media = mediaManager.get(mediaID, language);
  
      return media;
  }
@@ -70,8 +75,8 @@
   */
  function readMedia(mediaID) {
  
-     var mediaObj = getMediaInfo(mediaID);
-     var oMediaStream = mediaObj.getMedia();
+     let mediaObj = getMediaInfo(mediaID);
+     let oMediaStream = mediaObj.getMedia();
  
      return oMediaStream;
  }
@@ -106,7 +111,7 @@ try {
     /***
      *      Dictionary of content
      * */
-    var contentDict = {
+    let contentDict = {
 
         itemName:           getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         heading:            getContentValues('<t4 type="content" name="Optional Heading" output="normal" modifiers="striptags,htmlentities" />'),
@@ -135,17 +140,17 @@ try {
      *  default html initializations
      * 
      * */
-    var htmlClose = '</div>';
-    var openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';
-    var closeContactBoxSingle = '</div>';
-    var openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
-    var closePhotoWrapper = '</div>';
-    var contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
-    var openSingleInfoWrapper = '<div class="contactBoxSingleInfoWrapper col-12 col-lg-8">';
-    var closeSingleInfoWrapper = '</div>';
-    var openSingleInfo = '<div class="contactBoxSingleInfo text-center text-lg-start">';
-    var closeSingleInfo = '</div>';
-    var clearFix = '<div class="clearfix"></div>';
+    let htmlClose = '</div>';
+    let openContactBoxSingle = '<div class="standardContent contactBoxSingle d-lg-flex">';
+    let closeContactBoxSingle = '</div>';
+    let openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
+    let closePhotoWrapper = '</div>';
+    let contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
+    let openSingleInfoWrapper = '<div class="contactBoxSingleInfoWrapper col-12 col-lg-8">';
+    let closeSingleInfoWrapper = '</div>';
+    let openSingleInfo = '<div class="contactBoxSingleInfo text-center text-lg-start">';
+    let closeSingleInfo = '</div>';
+    let clearFix = '<div class="clearfix"></div>';
 
 
 
@@ -154,7 +159,7 @@ try {
      *  Parse for Background Color
      * 
      * */
-    var htmlOpen =                  (contentDict.color.content)
+    let htmlOpen =                  (contentDict.color.content)
                                     ? '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + contentDict.color.content + '" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">'
                                     : '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColorwhite" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
 
@@ -165,7 +170,7 @@ try {
      *  Parse for optional heading
      * 
      * */
-    var headingString =             (contentDict.heading.content)
+    let headingString =             (contentDict.heading.content)
                                     ? '<h2 class="contactBoxSingleTitle">' + contentDict.heading.content + '</h2>'
                                     : '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
 
@@ -176,7 +181,7 @@ try {
      *  Parse for Full Name
      * 
      * */
-    var fullNameString =            (contentDict.fullName.content)
+    let fullNameString =            (contentDict.fullName.content)
                                     ? '<h3 class="fullName">' + contentDict.fullName.content + '</h3>'
                                     : '<span class="displayNone visually-hidden">No heading provided</span>';
 
@@ -187,7 +192,7 @@ try {
      *  Parse for Title
      * 
      * */
-    var titleString =               (contentDict.title.content)
+    let titleString =               (contentDict.title.content)
                                     ? '<p class="contactBoxSingleInfoPosition">' + contentDict.title.content + '</p>'
                                     : '<p class="contactBoxSingleInfoPosition visually-hidden">No Title Provided</span>';
 
@@ -198,7 +203,7 @@ try {
      *  Parse for Phone 1
      * 
      * */
-    var phone1String =              (contentDict.phone1.content)
+    let phone1String =              (contentDict.phone1.content)
                                     ? '<p class="contactBoxSingleInfoPhone" id="phone1' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone1.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 1 Provided</p>';
 
@@ -209,7 +214,7 @@ try {
      *  Parse for Phone 2
      * 
      * */
-    var phone2String =              (contentDict.phone2.content)
+    let phone2String =              (contentDict.phone2.content)
                                     ? '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone2.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 2 Provided</p>';
 
@@ -220,7 +225,7 @@ try {
      *  Parse for Fax
      * 
      * */
-    var faxString =                 (contentDict.fax.content)
+    let faxString =                 (contentDict.fax.content)
                                     ? '<p class="contactBoxSingleInfoPhone" id="fax' + contentDict.contentID.content + '"><span class="fas fa-fax"></span><span>&nbsp;' + contentDict.fax.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoPhone visually-hidden">No Fax Provided</p>';
 
@@ -231,7 +236,7 @@ try {
      *  Parse for Office
      * 
      * */
-    var officeString =              (contentDict.office.content)
+    let officeString =              (contentDict.office.content)
                                     ? '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + contentDict.office.content + '</span></p>'
                                     : '<p class="contactBoxSingleInfoOffice visually-hidden">No Office Provided</p>';
 
@@ -242,8 +247,8 @@ try {
      *  Parse for Email
      * 
      * */
-    var emailTitle = contentDict.fullName.content ? contentDict.fullName.content : "SU Law";
-    var emailString =               (contentDict.email.content)
+    let emailTitle = contentDict.fullName.content ? contentDict.fullName.content : "SU Law";
+    let emailString =               (contentDict.email.content)
                                     ? '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + emailTitle + '">Contact ' + emailTitle + '</a></p>'
                                     : '<p class="contactBoxSingleInfoEmail visually-hidden">No Email Provided</p>';
 
@@ -254,7 +259,7 @@ try {
      *  Parse for Additional Content
      * 
      * */
-    var additionalContentString =   (contentDict.additionalContent.content)
+    let additionalContentString =   (contentDict.additionalContent.content)
                                     ? '<div class="contactBoxSingleInfoAdditional text-sm-start">' + contentDict.additionalContent.content + '</div>'
                                     : '<div class="contactBoxSingleInfoAdditional text-sm-start visually-hidden"><span class="visually-hidden">No Additional Content Provided</span></div>';
 
@@ -267,14 +272,14 @@ try {
      * */
      if (contentDict.articleImage.content) {
 
-        var imageID = content.get('Photo').getID();
-        var mediaInfo = getMediaInfo(imageID);
-        var media = readMedia(imageID);
-        var info = new ImageInfo;
+        let imageID = content.get('Photo').getID();
+        let mediaInfo = getMediaInfo(imageID);
+        let media = readMedia(imageID);
+        let info = new ImageInfo;
         info.setInput(media);
 
-        var defaultImageAlt = contentDict.fullName.content ? contentDict.fullName.content : contentDict.itemName.content;
-        var imageString =   (info.check())
+        let defaultImageAlt = contentDict.fullName.content ? contentDict.fullName.content : contentDict.itemName.content;
+        let imageString =   (info.check())
                             ? '<img src="' + contentDict.articleImage.content + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                             : '<img src="' + contentDict.articleImage.content + '" alt="' + defaultImageAlt + '" loading="auto" />';
 

@@ -247,10 +247,10 @@ try {
      *  Parse for Email
      * 
      * */
-    let emailTitle = contentDict.fullName.content ? contentDict.fullName.content : "SU Law";
-    let emailString =               (contentDict.email.content)
-                                    ? '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + emailTitle + '">Contact ' + emailTitle + '</a></p>'
-                                    : '<p class="contactBoxSingleInfoEmail visually-hidden">No Email Provided</p>';
+    // let emailTitle = contentDict.fullName.content ? contentDict.fullName.content : "SU Law";
+    // let emailString =               (contentDict.email.content)
+    //                                 ? '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + emailTitle + '">Contact ' + emailTitle + '</a></p>'
+    //                                 : '<p class="contactBoxSingleInfoEmail visually-hidden">No Email Provided</p>';
 
     let emailString = (contentDict.email.content && contentDict.firstName.content) ?
         '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + contentDict.firstName.content + '">Contact ' + contentDict.firstName.content + '</a></p>' :

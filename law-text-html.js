@@ -329,6 +329,7 @@ try {
             openSingleInfo,
             fullNameString,
             titleString,
+            subtitleString,
             phone1String,
             phone2String,
             faxString,

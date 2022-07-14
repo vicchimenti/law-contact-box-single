@@ -7,7 +7,7 @@
  *  An adaptation of 'Law - Contact Box' with a single stackable contact box and additional 'Phone 2' and 'Fax' fields.
  *  Document will write once when the page loads
  * 
- *  @version 210518.16
+ *  @version 210518.17
  * 
  */
 
@@ -172,7 +172,7 @@ try {
      * 
      * */
     let profileString = (contentDict.profileLinkUrl.content) ?
-        '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.profileLinkUrl.content + '" aria-label="Visit ' + contentDict.profileLinkText.content + '">' + contentDict.profileLinkText.content + '</a></p>' :
+        '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.profileLinkUrl.content + '" aria-label="' + contentDict.profileLinkText.content + '">' + contentDict.profileLinkText.content + '</a></p>' :
         '<p class="contactBoxSingleInfoProfile visually-hidden">No Email Provided</p>';
 
 

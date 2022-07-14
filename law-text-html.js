@@ -175,7 +175,6 @@ try {
         '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.profileLinkUrl.content + '" aria-label="Visit ' + contentDict.profileLinkText.content + '">' + contentDict.profileLinkText.content + '</a></p>' :
         '<p class="contactBoxSingleInfoProfile visually-hidden">No Email Provided</p>';
 
-    // <i class="fa-solid fa-user"></i>
 
 
 
@@ -273,11 +272,6 @@ try {
      *  Parse for Email
      * 
      * */
-    // let emailTitle = contentDict.fullName.content ? contentDict.fullName.content : "SU Law";
-    // let emailString =               (contentDict.email.content)
-    //                                 ? '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + emailTitle + '">Contact ' + emailTitle + '</a></p>'
-    //                                 : '<p class="contactBoxSingleInfoEmail visually-hidden">No Email Provided</p>';
-
     let emailString = (contentDict.email.content && contentDict.firstName.content) ?
         '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + contentDict.firstName.content + '">Contact ' + contentDict.firstName.content + '</a></p>' :
         (contentDict.email.content && contentDict.fullName.content) ?

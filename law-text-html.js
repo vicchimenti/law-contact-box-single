@@ -21,79 +21,79 @@
 /***
  *      Import T4 Utilities
  */
- importClass(com.terminalfour.media.IMediaManager);
- importClass(com.terminalfour.spring.ApplicationContextProvider);
- importClass(com.terminalfour.publish.utils.BrokerUtils);
- importClass(com.terminalfour.media.utils.ImageInfo);
- 
- 
- 
- 
- /***
-  *      Extract values from T4 element tags
-  *      and confirm valid existing content item field
-  */
-  function getContentValues(tag) {
+importClass(com.terminalfour.media.IMediaManager);
+importClass(com.terminalfour.spring.ApplicationContextProvider);
+importClass(com.terminalfour.publish.utils.BrokerUtils);
+importClass(com.terminalfour.media.utils.ImageInfo);
 
-     try {
 
-         let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
 
-         return {
-             isError: false,
-             content: _tag == '' ? null : _tag
-         };
 
-     } catch (error) {
+/***
+ *      Extract values from T4 element tags
+ *      and confirm valid existing content item field
+ */
+function getContentValues(tag) {
 
-         return {
-             isError: true,
-             message: error.message
-         };
-     }
- }
- 
- 
- 
- 
- /***
-  *      Returns a media object
-  */
- function getMediaInfo(mediaID) {
- 
-     let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-     let media = mediaManager.get(mediaID, language);
- 
-     return media;
- }
- 
- 
- 
- 
- /***
-  *      Returns a media stream object
-  */
- function readMedia(mediaID) {
- 
-     let mediaObj = getMediaInfo(mediaID);
-     let oMediaStream = mediaObj.getMedia();
- 
-     return oMediaStream;
- }
+    try {
 
- 
- 
-  
- /***
-  *      Write the document
-  */
- function writeDocument(array) {
- 
-     for (let i = 0; i < array.length; i++) {
- 
-         document.write(array[i]);
-     }
- }
+        let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
+
+        return {
+            isError: false,
+            content: _tag == '' ? null : _tag
+        };
+
+    } catch (error) {
+
+        return {
+            isError: true,
+            message: error.message
+        };
+    }
+}
+
+
+
+
+/***
+ *      Returns a media object
+ */
+function getMediaInfo(mediaID) {
+
+    let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+    let media = mediaManager.get(mediaID, language);
+
+    return media;
+}
+
+
+
+
+/***
+ *      Returns a media stream object
+ */
+function readMedia(mediaID) {
+
+    let mediaObj = getMediaInfo(mediaID);
+    let oMediaStream = mediaObj.getMedia();
+
+    return oMediaStream;
+}
+
+
+
+
+/***
+ *      Write the document
+ */
+function writeDocument(array) {
+
+    for (let i = 0; i < array.length; i++) {
+
+        document.write(array[i]);
+    }
+}
 
 
 
@@ -113,30 +113,30 @@ try {
      * */
     let contentDict = {
 
-        itemName:           getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
-        heading:            getContentValues('<t4 type="content" name="Optional Heading" output="normal" modifiers="striptags,htmlentities" />'),
-        fullName:           getContentValues('<t4 type="content" name="Full Name" output="normal" modifiers="striptags,htmlentities" />'),
-        firstName:          getContentValues('<t4 type="content" name="First Name" output="normal" modifiers="striptags,htmlentities" />'),
-        lastName:           getContentValues('<t4 type="content" name="Last Name" output="normal" modifiers="striptags,htmlentities" />'),
-        title:              getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
-        subtitle:           getContentValues('<t4 type="content" name="Subtitle" output="normal" modifiers="striptags,htmlentities" />'),
-        phone1:             getContentValues('<t4 type="content" name="Phone 1" output="normal" modifiers="striptags,htmlentities" />'),
-        phone2:             getContentValues('<t4 type="content" name="Phone 2" output="normal" modifiers="striptags,htmlentities" />'),
-        fax:                getContentValues('<t4 type="content" name="Fax" output="normal" modifiers="striptags,htmlentities" />'),
-        email:              getContentValues('<t4 type="content" name="Email" output="normal" modifiers="striptags,htmlentities,encode_emails" />'),
-        office:             getContentValues('<t4 type="content" name="Office" output="normal" modifiers="striptags,htmlentities" />'),
-        additionalContent:  getContentValues('<t4 type="content" name="Additional Text" output="normal" modifiers="medialibrary,nav_sections" />'),
-        color:              getContentValues('<t4 type="content" name="Background Color" output="normal" display_field="value" />'),
-        articleImage:       getContentValues('<t4 type="content" name="Photo" output="normal" formatter="path/*" />'),
-        profileLinkUrl:     getContentValues('<t4 type="content" name="Profile Link" output="linkurl" modifiers="nav_sections" />'),
-        profileLinkText:    getContentValues('<t4 type="content" name="Profile Link" output="linktext" modifiers="nav_sections" />'),
-        anchorTag:          getContentValues('<t4 type="meta" meta="html_anchor" />'),
-        contentID:          getContentValues('<t4 type="meta" meta="content_id" />')
+        itemName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
+        heading: getContentValues('<t4 type="content" name="Optional Heading" output="normal" modifiers="striptags,htmlentities" />'),
+        fullName: getContentValues('<t4 type="content" name="Full Name" output="normal" modifiers="striptags,htmlentities" />'),
+        firstName: getContentValues('<t4 type="content" name="First Name" output="normal" modifiers="striptags,htmlentities" />'),
+        lastName: getContentValues('<t4 type="content" name="Last Name" output="normal" modifiers="striptags,htmlentities" />'),
+        title: getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
+        subtitle: getContentValues('<t4 type="content" name="Subtitle" output="normal" modifiers="striptags,htmlentities" />'),
+        phone1: getContentValues('<t4 type="content" name="Phone 1" output="normal" modifiers="striptags,htmlentities" />'),
+        phone2: getContentValues('<t4 type="content" name="Phone 2" output="normal" modifiers="striptags,htmlentities" />'),
+        fax: getContentValues('<t4 type="content" name="Fax" output="normal" modifiers="striptags,htmlentities" />'),
+        email: getContentValues('<t4 type="content" name="Email" output="normal" modifiers="striptags,htmlentities,encode_emails" />'),
+        office: getContentValues('<t4 type="content" name="Office" output="normal" modifiers="striptags,htmlentities" />'),
+        additionalContent: getContentValues('<t4 type="content" name="Additional Text" output="normal" modifiers="medialibrary,nav_sections" />'),
+        color: getContentValues('<t4 type="content" name="Background Color" output="normal" display_field="value" />'),
+        articleImage: getContentValues('<t4 type="content" name="Photo" output="normal" formatter="path/*" />'),
+        profileLinkUrl: getContentValues('<t4 type="content" name="Profile Link" output="linkurl" modifiers="nav_sections" />'),
+        profileLinkText: getContentValues('<t4 type="content" name="Profile Link" output="linktext" modifiers="nav_sections" />'),
+        anchorTag: getContentValues('<t4 type="meta" meta="html_anchor" />'),
+        contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
 
 
 
-    
+
     /***
      *  default html initializations
      * 
@@ -146,7 +146,7 @@ try {
     let closeContactBoxSingle = '</div>';
     let openPhotoWrapper = '<div class="contactBoxSinglePhotoWrapper col-12 col-lg-4 me-lg-4">';
     let closePhotoWrapper = '</div>';
-    let contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
+    let contactBoxSinglePhoto = '<div class="contactBoxSinglePhoto visually-hidden">No Image Provided</div>';
     let openSingleInfoWrapper = '<div class="contactBoxSingleInfoWrapper col-12 col-lg-8">';
     let closeSingleInfoWrapper = '</div>';
     let openSingleInfo = '<div class="contactBoxSingleInfo text-center text-lg-start">';
@@ -160,9 +160,20 @@ try {
      *  Parse for Background Color
      * 
      * */
-    let htmlOpen =                  (contentDict.color.content)
-                                    ? '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + contentDict.color.content + '" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">'
-                                    : '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColorwhite" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
+    let htmlOpen = (contentDict.color.content) ?
+        '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + contentDict.color.content + '" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">' :
+        '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColorwhite" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
+
+
+
+
+    /***
+     *  Parse for Bio Link
+     * 
+     * */
+    let profileString = (contentDict.profileLinkUrl.content) ?
+        '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + contentDict.color.content + '" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">' :
+        '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColorwhite" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
 
 
 
@@ -171,20 +182,20 @@ try {
      *  Parse for optional heading
      * 
      * */
-    let headingString =             (contentDict.heading.content)
-                                    ? '<h2 class="contactBoxSingleTitle">' + contentDict.heading.content + '</h2>'
-                                    : '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
+    let headingString = (contentDict.heading.content) ?
+        '<h2 class="contactBoxSingleTitle">' + contentDict.heading.content + '</h2>' :
+        '<span class="contactBoxSingleTitle displayNone visually-hidden">No heading provided</span>';
 
 
 
-    
+
     /***
      *  Parse for Full Name
      * 
      * */
-    let fullNameString =            (contentDict.fullName.content)
-                                    ? '<h3 class="fullName">' + contentDict.fullName.content + '</h3>'
-                                    : '<span class="displayNone visually-hidden">No heading provided</span>';
+    let fullNameString = (contentDict.fullName.content) ?
+        '<h3 class="fullName">' + contentDict.fullName.content + '</h3>' :
+        '<span class="displayNone visually-hidden">No heading provided</span>';
 
 
 
@@ -228,9 +239,9 @@ try {
      *  Parse for Phone 2
      * 
      * */
-    let phone2String =              (contentDict.phone2.content)
-                                    ? '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone2.content + '</span></p>'
-                                    : '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 2 Provided</p>';
+    let phone2String = (contentDict.phone2.content) ?
+        '<p class="contactBoxSingleInfoPhone" id="phone2' + contentDict.contentID.content + '"><span class="fas fa-phone"></span><span>&nbsp;' + contentDict.phone2.content + '</span></p>' :
+        '<p class="contactBoxSingleInfoPhone visually-hidden">No Phone 2 Provided</p>';
 
 
 
@@ -239,9 +250,9 @@ try {
      *  Parse for Fax
      * 
      * */
-    let faxString =                 (contentDict.fax.content)
-                                    ? '<p class="contactBoxSingleInfoPhone" id="fax' + contentDict.contentID.content + '"><span class="fas fa-fax"></span><span>&nbsp;' + contentDict.fax.content + '</span></p>'
-                                    : '<p class="contactBoxSingleInfoPhone visually-hidden">No Fax Provided</p>';
+    let faxString = (contentDict.fax.content) ?
+        '<p class="contactBoxSingleInfoPhone" id="fax' + contentDict.contentID.content + '"><span class="fas fa-fax"></span><span>&nbsp;' + contentDict.fax.content + '</span></p>' :
+        '<p class="contactBoxSingleInfoPhone visually-hidden">No Fax Provided</p>';
 
 
 
@@ -250,9 +261,9 @@ try {
      *  Parse for Office
      * 
      * */
-    let officeString =              (contentDict.office.content)
-                                    ? '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + contentDict.office.content + '</span></p>'
-                                    : '<p class="contactBoxSingleInfoOffice visually-hidden">No Office Provided</p>';
+    let officeString = (contentDict.office.content) ?
+        '<p class="contactBoxSingleInfoOffice"><span class="fas fa-map-marker-alt"></span><span>&nbsp;' + contentDict.office.content + '</span></p>' :
+        '<p class="contactBoxSingleInfoOffice visually-hidden">No Office Provided</p>';
 
 
 
@@ -282,9 +293,9 @@ try {
      *  Parse for Additional Content
      * 
      * */
-    let additionalContentString =   (contentDict.additionalContent.content)
-                                    ? '<div class="contactBoxSingleInfoAdditional text-sm-start">' + contentDict.additionalContent.content + '</div>'
-                                    : '<div class="contactBoxSingleInfoAdditional text-sm-start visually-hidden"><span class="visually-hidden">No Additional Content Provided</span></div>';
+    let additionalContentString = (contentDict.additionalContent.content) ?
+        '<div class="contactBoxSingleInfoAdditional text-sm-start">' + contentDict.additionalContent.content + '</div>' :
+        '<div class="contactBoxSingleInfoAdditional text-sm-start visually-hidden"><span class="visually-hidden">No Additional Content Provided</span></div>';
 
 
 
@@ -293,7 +304,7 @@ try {
      *  Parse for Image Info
      * 
      * */
-     if (contentDict.articleImage.content) {
+    if (contentDict.articleImage.content) {
 
         let imageID = content.get('Photo').getID();
         let mediaInfo = getMediaInfo(imageID);
@@ -302,13 +313,13 @@ try {
         info.setInput(media);
 
         let defaultImageAlt = contentDict.fullName.content ? contentDict.fullName.content : contentDict.itemName.content;
-        let imageString =   (info.check())
-                            ? '<img src="' + contentDict.articleImage.content + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
-                            : '<img src="' + contentDict.articleImage.content + '" alt="' + defaultImageAlt + '" loading="auto" />';
+        let imageString = (info.check()) ?
+            '<img src="' + contentDict.articleImage.content + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />' :
+            '<img src="' + contentDict.articleImage.content + '" alt="' + defaultImageAlt + '" loading="auto" />';
 
-        contactBoxSinglePhoto ='<div class="contactBoxSinglePhoto">' + imageString + '</div>';
+        contactBoxSinglePhoto = '<div class="contactBoxSinglePhoto">' + imageString + '</div>';
     }
-                                    
+
 
 
 
@@ -345,9 +356,8 @@ try {
     );
 
 
-        
 
-    }
-    catch (err) {
-        document.write (err.message);
+
+} catch (err) {
+    document.write(err.message);
 }

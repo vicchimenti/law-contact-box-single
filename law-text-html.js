@@ -172,7 +172,7 @@ try {
      * 
      * */
     let profileString = (contentDict.profileLinkUrl.content) ?
-        '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.profileLinkUrl.content + '" aria-label="' + contentDict.profileLinkText.content + '">' + contentDict.profileLinkText.content + '</a></p>' :
+        '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.profileLinkUrl.content + '" aria-label="' + contentDict.profileLinkText.content + '" target="_blank">' + contentDict.profileLinkText.content + '</a></p>' :
         '<p class="contactBoxSingleInfoProfile visually-hidden">No Email Provided</p>';
 
 

@@ -4,4 +4,4 @@ A content type that holds contact information for one person and links to thier 
 
 ## TODO
 
--[x] implement section/content link
+- [x] implement section/content link

@@ -171,7 +171,9 @@ try {
      *  Parse for Bio Link
      * 
      * */
-    let profileString = (contentDict.profileLinkUrl.content) ?
+    let profileString = (contentDict.profileLinkUrl.content && contentDict.firstName.content) ?
+        '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.profileLinkUrl.content + '" aria-label="Visit ' + contentDict.profileLinkText.content + '">' + contentDict.firstName.content + '0xA9s Bio</a></p>' :
+        (contentDict.profileLinkUrl.content) ?
         '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.profileLinkUrl.content + '" aria-label="Visit ' + contentDict.profileLinkText.content + '">' + contentDict.profileLinkText.content + '</a></p>' :
         '<p class="contactBoxSingleInfoProfile visually-hidden">No Email Provided</p>';
 
@@ -277,9 +279,6 @@ try {
         (contentDict.email.content && contentDict.fullName.content) ?
         '<p class="contactBoxSingleInfoEmail"><span class="fas fa-envelope"></span>&nbsp;<a href="mailto:' + contentDict.email.content + '" aria-label="Send an email to ' + contentDict.fullName.content + '">Contact ' + contentDict.fullName.content + '</a></p>' :
         '<p class="contactBoxSingleInfoEmail visually-hidden">No Email Provided</p>';
-
-
-
 
 
 

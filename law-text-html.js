@@ -172,9 +172,10 @@ try {
      * 
      * */
     let profileString = (contentDict.profileLinkUrl.content) ?
-        '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColor' + contentDict.color.content + '" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">' :
-        '<div class="contactBoxSingleWrapper contentItem contactBoxSingleColorwhite" id="id' + contentDict.contentID.content + '" data-position-default="Main" data-position-selected="Main">';
+        '<p class="contactBoxSingleInfoProfile"><span class="fas fa-user"></span>&nbsp;<a href="' + contentDict.email.content + '" aria-label="Send an email to ' + contentDict.firstName.content + '">Contact ' + contentDict.firstName.content + '</a></p>' :
+        '<p class="contactBoxSingleInfoProfile visually-hidden">No Email Provided</p>';
 
+    // <i class="fa-solid fa-user"></i>
 
 
 

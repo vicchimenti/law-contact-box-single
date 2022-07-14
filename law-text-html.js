@@ -347,6 +347,7 @@ try {
             faxString,
             officeString,
             emailString,
+            profileString,
             additionalContentString,
             closeSingleInfo,
             closeSingleInfoWrapper,
